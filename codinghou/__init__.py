@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
- @Date    : 2021/2/3 21:51
+ @Date    : 2023/6/1 21:51
  @Author  : Douglee
 """
 from pyfiglet import Figlet, FigletFont
 import random
+import time
 
-
-greetings = [
+greetings_new_year = [
     '愿你在新的一年里，学习进步，成绩优异！',
     '新年新开始，愿你所有的梦想都能在新的一年里实现！',
     '新年快乐！愿你在新的一年里，变得更有趣，获得更多的关注！不过要记住，学习永远是第一位的！',
@@ -24,6 +24,18 @@ greetings = [
     '愿你在新的一年里，健康快乐，获得更多的成就！当然，如果你能在新的一年编程更厉害，那就更好了！虽然你已经是我们心目中很厉害的小小程序员了！'
 ]
 
+greetings = [
+    '小朋友们，儿童节到啦！开心快乐才是王道，吃糖吃到牙齿掉！',
+    '儿童节到，小朋友们要开心笑，吃好吃的，玩个够，别忘记做个调皮鬼！',
+    '亲爱的小朋友们，儿童节快乐！愿你们的童年像个气球，永远充满着欢笑和惊喜！',
+    '小朋友们，儿童节要记得，不管多大多高，心里永远有个孩子在跳跃！',
+    '撒欢儿童节，闹翻天，捧着糖果乐开颜，让快乐像流星划过天！',
+    '祝所有调皮捣蛋的小朋友们儿童节快乐！别忘了做些顽皮的事，让大人们惊讶又心疼！',
+    '儿童节到来，放飞心中的童年小鸟，快乐的歌声满天飞舞！',
+    '小朋友们，儿童节快乐！愿你们的天真无邪和调皮捣蛋的本领永远保持！享受快乐时光吧！',
+    '儿童节，小脚丫，欢乐是最好的发呆。忘记烦恼，玩个痛快，做个快乐的小调皮！',
+    '愿你的儿童节充满奇迹，比糖果更甜，比彩虹更美，比快乐更多！开心过节！'
+]
 
 def greeting():
     greet = random.choice(greetings)
@@ -32,8 +44,8 @@ def greeting():
 
 def default(font="larry3d"):
     f = Figlet(font=font, width=200)
-    print(f.renderText('CODINGHOU'))
-    print(f.renderText('Happy New Year'))
+    #print(f.renderText('CODINGHOU'))
+    print(f.renderText("Happy Children's Day"))
 
 
 def get_fonts():
@@ -44,6 +56,17 @@ def get_fonts():
     all_fonts = FigletFont().getFonts()
     return all_fonts
 
+def 儿童节():
+    n = random.randint(1,4)
+    if(n==1):
+        print('恭喜你抽中连续祝福，按回车查看')
+        input()
+        for i in range(5):
+            greeting()
+            time.sleep(0.8)
+    else:
+        greeting()
+
+    print('\n你有什么祝福语想加到codinghou模块吗？到评论区留言吧')
 
 default()
-greeting()
